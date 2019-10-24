@@ -1,31 +1,25 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import DisplayDate from './Components/DisplayDate';
-import { color } from './Base'
+import EditInPlace from './Components/EditInPlace';
 
 
-
-class App extends Component {
-
-  render(){
+const App = () => {
+  const [name, setName]  = useState('Nome');
+  const [last, setLast] = useState('SobreNome')
     return (
-      <>
         <div className="App">
-          <DisplayDate
-            weekDay
-            date 
-            clock 
-            hour12 
-            showSeconds
-            color= {color.primary}
-            fontWeight = "700"
-            textTransform = "capitalize"
-            // typeInter
+          <EditInPlace 
+            value={name}
+            onChangeValue = {setName}
           />
+          <EditInPlace 
+            value={last}
+            onChangeValue = {setLast}
+          />
+          <hr/>
+          Name: {name} {last}
         </div>
-     </>
     );
-  } 
-}
+} 
 
 export default App;
