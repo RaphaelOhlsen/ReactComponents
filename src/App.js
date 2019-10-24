@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import EditInPlace from './Components/EditInPlace';
+import EditInPlace, {TextArea} from './Components/EditInPlace';
 
 
 const App = () => {
@@ -13,6 +13,12 @@ const App = () => {
             onChangeValue = {setName}
           />
           <EditInPlace 
+            viewAs="h3"
+            value={last}
+            onChangeValue = {setLast}
+          />
+          <TextArea 
+            viewAs="pre"
             value={last}
             onChangeValue = {setLast}
           />
